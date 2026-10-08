@@ -1,7 +1,10 @@
-/*Variables de Diseño y Paleta Ígnea */
+/* =========================================
+   Variables de Diseño y Paleta Ígnea
+========================================= */
 :root {
     --bg-dark: #0d0f14;
     --bg-card: #161922;
+    --bg-slot: #12151e;
     --border-color: #2b3144;
     --fire-orange: #ff6b22;
     --fire-gold: #fbbf24;
@@ -9,6 +12,7 @@
     --text-muted: #94a3b8;
     --font-base: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
+
 /* =========================================
    Reseteo y Base
 ========================================= */
@@ -139,7 +143,7 @@ body {
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
 
@@ -155,32 +159,147 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: rgba(255, 107, 34, 0.6);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-.card img {
-    width: 100%;
-    height: 190px;
+/* Cabecera del bastón: imagen y texto alineados */
+.card-header-info {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+/* Miniatura principal del bastón */
+.card-header-info img {
+    width: 85px;
+    height: 85px;
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid var(--border-color);
+    flex-shrink: 0;
 }
 
-.card h3 {
+.card-header-info h3 {
     color: var(--fire-gold);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
 }
 
-.card p {
+.card-header-info p {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
-.card p strong {
+.card-header-info strong {
     color: var(--text-main);
+}
+
+/* =========================================
+   Desplegable de Builds (<details>)
+========================================= */
+.build-acordion {
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.8rem;
+}
+
+.accordion-btn {
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--fire-orange);
+    padding: 0.6rem 1rem;
+    background-color: var(--bg-slot);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    user-select: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    list-style: none;
+}
+
+.accordion-btn::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-btn:hover {
+    background-color: #1a1e2b;
+    border-color: var(--fire-orange);
+}
+
+.builds-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.build-item {
+    background-color: #0b0d13;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.9rem;
+}
+
+/* Etiquetas de contenido (PvP/PvE) */
+.build-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.7rem;
+}
+
+.tag.pvp {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid #ef4444;
+}
+
+/* =========================================
+   Casillas de Equipo en Miniatura
+========================================= */
+.gear-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.gear-slost {
+    width: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.4rem 0.2rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gear-slost:hover {
+    border-color: var(--fire-orange);
+    transform: translateY(-2px);
+}
+
+/* Miniatura acotada de armadura */
+.gear-slost img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.gear-slost span {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    line-height: 1.15;
 }
 
 /* =========================================
@@ -197,6 +316,11 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
+    }
+
+    .card-header-info {
+        flex-direction: column;
+        text-align: center;
     }
 
     .hero-section h2 {
