@@ -171,7 +171,6 @@ body {
     align-items: center;
 }
 
-/* Miniatura principal del bastón */
 .card-header-info img {
     width: 85px;
     height: 85px;
@@ -240,7 +239,7 @@ body {
     background-color: #0b0d13;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 0.9rem;
+    padding: 1.1rem;
 }
 
 /* Etiquetas de contenido (PvP/PvE) */
@@ -251,7 +250,7 @@ body {
     text-transform: uppercase;
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
 }
 
 .tag.pvp {
@@ -267,6 +266,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
+    margin-bottom: 1rem;
 }
 
 .gear-slost {
@@ -287,7 +287,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Miniatura acotada de armadura */
 .gear-slost img {
     width: 48px;
     height: 48px;
@@ -300,6 +299,183 @@ body {
     font-size: 0.68rem;
     color: var(--text-muted);
     line-height: 1.15;
+}
+
+/* =========================================
+   Información de la Build
+========================================= */
+.build-info-box {
+    margin-bottom: 1.2rem;
+    padding: 0.85rem 1rem;
+    background-color: #12151e;
+    border-left: 3px solid var(--fire-orange);
+    border-radius: 4px;
+}
+
+.build-info-box h4 {
+    font-size: 0.88rem;
+    color: var(--fire-gold);
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.build-info-box p {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.build-info-box strong {
+    color: var(--text-main);
+}
+
+/* =========================================
+   Diseño de 2 Columnas: Habilidades y Combos
+========================================= */
+.build-details-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Columna Izquierda: Hechizos y Pasivas */
+.skills-config-box {
+    background-color: #12151e;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.9rem;
+}
+
+.skills-config-box h4 {
+    font-size: 0.85rem;
+    color: var(--fire-gold);
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+}
+
+.skills-config-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.skills-config-box li {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skills-config-box strong {
+    color: var(--text-main);
+}
+
+.skill-key {
+    background-color: rgba(255, 107, 34, 0.2);
+    color: var(--fire-orange);
+    border: 1px solid var(--fire-orange);
+    font-weight: 800;
+    font-size: 0.72rem;
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-key.passive {
+    background-color: rgba(251, 191, 36, 0.2);
+    color: var(--fire-gold);
+    border-color: var(--fire-gold);
+}
+
+.skills-note {
+    margin-top: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.skills-note p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.35;
+}
+
+.skills-note strong {
+    color: var(--fire-orange);
+}
+
+/* Columna Derecha: Tarjetas de Combos */
+.combos-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.combo-card {
+    background-color: #12151e;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.85rem;
+}
+
+.combo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.combo-header h4 {
+    font-size: 0.84rem;
+    color: var(--fire-gold);
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.combo-w-badge {
+    background-color: rgba(251, 191, 36, 0.15);
+    color: var(--fire-gold);
+    border: 1px solid var(--fire-gold);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+}
+
+.combo-steps {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.step {
+    background-color: #1a1e2b;
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.55rem;
+    border-radius: 5px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.step strong {
+    color: var(--fire-orange);
+}
+
+.step-arrow {
+    color: var(--fire-gold);
+    font-weight: bold;
+    font-size: 0.85rem;
 }
 
 /* =========================================
@@ -325,5 +501,9 @@ body {
 
     .hero-section h2 {
         font-size: 1.9rem;
+    }
+
+    .build-details-layout {
+        grid-template-columns: 1fr;
     }
 }
