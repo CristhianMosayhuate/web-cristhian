@@ -80,7 +80,7 @@ body {
    Contenedor Principal y Hero
 ========================================= */
 .main-container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 2.5rem 1.5rem;
 }
@@ -141,11 +141,10 @@ body {
     color: var(--text-main);
 }
 
-/* Cada bastón toma su fila completa de forma limpia */
 .cards-grid {
     display: flex;
     flex-direction: column;
-    gap: 2.2rem;
+    gap: 2.5rem;
 }
 
 .card {
@@ -155,12 +154,12 @@ body {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    border-color: rgba(255, 107, 34, 0.5);
+    border-color: rgba(255, 107, 34, 0.4);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
@@ -200,9 +199,9 @@ body {
    Desplegable de Builds (<details>)
 ========================================= */
 .build-acordion {
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
     border-top: 1px solid var(--border-color);
-    padding-top: 0.9rem;
+    padding-top: 1rem;
 }
 
 .accordion-btn {
@@ -232,7 +231,7 @@ body {
 .builds-container {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.8rem;
     margin-top: 1.2rem;
 }
 
@@ -240,10 +239,9 @@ body {
     background-color: #0d1017;
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    padding: 1.3rem;
+    padding: 1.4rem;
 }
 
-/* Etiquetas de contenido */
 .build-tag {
     display: inline-block;
     font-size: 0.74rem;
@@ -253,16 +251,13 @@ body {
     border-radius: 4px;
     margin-bottom: 1rem;
     letter-spacing: 0.5px;
-}
-
-.tag.pvp {
+    border: 1px solid #ef4444;
     background-color: rgba(239, 68, 68, 0.15);
     color: #f87171;
-    border: 1px solid #ef4444;
 }
 
 /* =========================================
-   Casillas de Equipo en Miniatura
+   Casillas de Equipo
 ========================================= */
 .gear-grid {
     display: flex;
@@ -306,8 +301,8 @@ body {
    Información de la Build
 ========================================= */
 .build-info-box {
-    margin-bottom: 1.2rem;
-    padding: 0.85rem 1.1rem;
+    margin-bottom: 1.3rem;
+    padding: 0.9rem 1.1rem;
     background-color: #121520;
     border-left: 3px solid var(--fire-orange);
     border-radius: 5px;
@@ -332,9 +327,9 @@ body {
 ========================================= */
 .build-details-layout {
     display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 1.2rem;
-    align-items: stretch;
+    grid-template-columns: 290px 1fr;
+    gap: 1.3rem;
+    align-items: start;
 }
 
 /* Columna Izquierda: Hechizos y Pasivas */
@@ -343,8 +338,6 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
 }
 
 .skills-config-box h4 {
@@ -359,21 +352,23 @@ body {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
     padding: 0;
 }
 
 .skills-config-box li {
     font-size: 0.82rem;
     color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 0.6rem;
+    align-items: start;
+    line-height: 1.35;
 }
 
-.skills-config-box strong {
+.skills-config-box li strong {
     color: var(--text-main);
-    margin-right: 0.2rem;
+    display: inline;
 }
 
 .skill-key {
@@ -381,11 +376,11 @@ body {
     color: var(--fire-orange);
     border: 1px solid var(--fire-orange);
     font-weight: 800;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     border-radius: 4px;
-    min-width: 22px;
-    height: 22px;
-    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
@@ -398,7 +393,7 @@ body {
 }
 
 .skills-note {
-    margin-top: auto;
+    margin-top: 1rem;
     padding-top: 0.7rem;
     border-top: 1px dashed var(--border-color);
 }
@@ -413,18 +408,20 @@ body {
     color: var(--fire-orange);
 }
 
-/* Columna Derecha: Tarjetas de Combos con Flechas Fluidas */
+/* =========================================
+   Columna Derecha: Tarjetas de Combos Ordenadas
+========================================= */
 .combos-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 1rem;
 }
 
 .combo-card {
     background-color: #121520;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 0.9rem 1.1rem;
+    padding: 1rem 1.1rem;
 }
 
 .combo-header {
@@ -432,12 +429,14 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 0.65rem;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .combo-header h4 {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     color: var(--fire-gold);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -455,33 +454,28 @@ body {
     white-space: nowrap;
 }
 
-/* Flujo horizontal compacto con flechas visibles */
+/* Lista vertical limpia para evitar flechas rotas y textos aplastados */
 .combo-steps {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem 0.5rem;
+    flex-direction: column;
+    gap: 0.45rem;
 }
 
+/* Ocultamos los símbolos de flechas individuales para que no queden solos en nuevas líneas */
 .step-arrow {
-    display: inline-block;
-    color: var(--fire-orange);
-    font-weight: 900;
-    font-size: 0.85rem;
-    user-select: none;
+    display: none;
 }
 
 .step {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    background-color: #1a1e2b;
-    border: 1px solid #2d3348;
-    padding: 0.32rem 0.6rem;
-    border-radius: 5px;
-    font-size: 0.77rem;
+    display: block;
+    background-color: #171b26;
+    border: 1px solid #282f42;
+    border-left: 3px solid var(--fire-orange);
+    padding: 0.45rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
     color: #cbd5e1;
-    white-space: nowrap;
+    line-height: 1.4;
 }
 
 .step strong {
@@ -494,9 +488,6 @@ body {
 @media (max-width: 950px) {
     .build-details-layout {
         grid-template-columns: 1fr;
-    }
-    .step {
-        white-space: normal;
     }
 }
 
