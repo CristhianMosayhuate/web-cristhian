@@ -4,6 +4,7 @@
 :root {
     --bg-dark: #0a0c10;
     --bg-card: #131620;
+    --bg-card-hover: #1c2130;
     --bg-slot: #1a1e2b;
     --border-color: #262b3d;
     --fire-orange: #ff6b22;
@@ -119,6 +120,8 @@ body {
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 15px rgba(255, 107, 34, 0.35);
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -129,16 +132,27 @@ body {
 /* =========================================
    Sección de Bastones y Tarjetas
 ========================================= */
-.cards-section {
+.cards-section,
+.table-section,
+.form-section {
     margin-bottom: 4rem;
 }
 
-.cards-section h2 {
+.cards-section h2,
+.table-section h2,
+.form-section h2 {
     font-size: 1.85rem;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.2rem;
     border-left: 5px solid var(--fire-orange);
     padding-left: 1rem;
     color: var(--text-main);
+}
+
+.table-section p,
+.form-section > p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
 }
 
 .cards-grid {
@@ -254,6 +268,12 @@ body {
     border: 1px solid #ef4444;
     background-color: rgba(239, 68, 68, 0.15);
     color: #f87171;
+}
+
+.build-tag.tag-pve {
+    border-color: #22c55e;
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
 }
 
 /* =========================================
@@ -409,7 +429,7 @@ body {
 }
 
 /* =========================================
-   Columna Derecha: Tarjetas de Combos Ordenadas
+   Columna Derecha: Tarjetas de Combos
 ========================================= */
 .combos-wrapper {
     display: flex;
@@ -454,14 +474,12 @@ body {
     white-space: nowrap;
 }
 
-/* Lista vertical limpia para evitar flechas rotas y textos aplastados */
 .combo-steps {
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
 }
 
-/* Ocultamos los símbolos de flechas individuales para que no queden solos en nuevas líneas */
 .step-arrow {
     display: none;
 }
@@ -480,6 +498,153 @@ body {
 
 .step strong {
     color: var(--fire-gold);
+}
+
+/* =========================================
+   Tabla Comparativa y Stats
+========================================= */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    background-color: var(--bg-card);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 720px;
+}
+
+th, td {
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #161a26;
+    color: var(--fire-orange);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: var(--bg-card-hover);
+}
+
+td {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+td strong {
+    color: var(--text-main);
+}
+
+td:nth-child(6),
+td:nth-child(7) {
+    color: var(--fire-gold);
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   Formularios (Comentarios & Contacto)
+========================================= */
+.contact-form {
+    background-color: var(--bg-card);
+    padding: 1.8rem 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    max-width: 650px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 0.95rem;
+    background-color: #0a0c10;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 0.92rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--fire-orange);
+}
+
+/* =========================================
+   Pie de Página (Footer)
+========================================= */
+.footer {
+    background-color: #07080b;
+    padding: 2.5rem 5%;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.footer-content p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-btn {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    color: #fff;
+    border-color: var(--fire-orange);
+    background-color: rgba(255, 107, 34, 0.15);
 }
 
 /* =========================================
